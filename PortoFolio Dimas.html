@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dimas Dwi Almufashshal — General Affair & Admin</title>
+<meta name="description" content="Dimas Dwi Almufashshal: General Affair dan Messenger di perusahaan cloud, berpengalaman 3+ tahun sebagai Admin dan Operator, sedang kuliah Teknik Informatika.">
+<meta property="og:title" content="Dimas Dwi Almufashshal — General Affair & Admin">
+<meta property="og:description" content="General Affair, Admin & Operator. Kuliah Teknik Informatika, melangkah ke dunia IT.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f2; --surface:#ffffff; --ink:#1d1b19; --muted:#6b645c;
+    --line:#e7e0d6; --accent:#c2410c; --accent-soft:#fdeadd;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14110f; --surface:#1d1916; --ink:#f3ece3; --muted:#a69d92;
+      --line:#2e2822; --accent:#fb923c; --accent-soft:#2c1c12;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--ink);
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+  nav .logo{font-family:Fraunces,serif;font-weight:700;text-decoration:none}
+  nav ul{display:flex;gap:18px;list-style:none;font-size:14px}
+  nav ul a{text-decoration:none;color:var(--muted)}
+  nav ul a:hover{color:var(--accent)}
+  @media(max-width:560px){nav ul li:nth-child(n+4){display:none}}
+
+  /* hero */
+  .hero{padding:72px 0 56px}
+  .badge{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);
+    background:var(--accent-soft);padding:5px 12px;border-radius:99px;margin-bottom:20px}
+  .hero h1{font-size:clamp(34px,7vw,56px);font-weight:700;letter-spacing:-.02em}
+  .hero h1 span{color:var(--accent)}
+  .hero p{margin-top:18px;max-width:600px;color:var(--muted);font-size:18px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;font-size:15px;
+    text-decoration:none;border:1px solid var(--ink);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .stat b{display:block;font-family:Fraunces,serif;font-size:30px;color:var(--accent)}
+  .stat small{color:var(--muted);font-size:13px}
+  @media(max-width:560px){.stats{grid-template-columns:1fr}}
+
+  section{padding:48px 0}
+  section h2{font-size:30px;margin-bottom:24px}
+  section h2::after{content:"";display:block;width:44px;height:3px;background:var(--accent);margin-top:10px;border-radius:2px}
+
+  .about p+p{margin-top:14px}
+  .about p{color:var(--muted)}
+
+  /* timeline */
+  .timeline{position:relative;padding-left:26px;border-left:2px solid var(--line)}
+  .job{position:relative;margin-bottom:28px}
+  .job::before{content:"";position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:3px solid var(--accent)}
+  .job h3{font-size:19px}
+  .job .co{color:var(--accent);font-weight:600;font-size:15px}
+  .job .meta{font-size:13px;color:var(--muted);margin:2px 0 8px}
+  .job ul{padding-left:18px;color:var(--muted);font-size:15px}
+  .job li+li{margin-top:4px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:18px}
+  .card p{color:var(--muted);font-size:14px;margin-top:4px}
+
+  .skills{display:flex;flex-wrap:wrap;gap:10px}
+  .skills span{background:var(--surface);border:1px solid var(--line);padding:8px 14px;border-radius:99px;font-size:14px}
+  .skills h3{width:100%;font-size:16px;margin-top:14px;color:var(--muted);font-family:Inter,sans-serif;font-weight:600}
+  .skills h3:first-child{margin-top:0}
+
+  .contact-box{background:var(--ink);color:var(--bg);border-radius:20px;padding:36px;text-align:center}
+  .contact-box h2{color:var(--bg)}
+  .contact-box h2::after{margin-left:auto;margin-right:auto}
+  .contact-box p{opacity:.8;margin-bottom:22px}
+  .contact-box .btn{border-color:var(--bg);color:var(--bg)}
+  .contact-box .btn.primary{color:#fff;border-color:var(--accent)}
+
+  footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Dimas Dwi</a>
+    <ul>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#pengalaman">Pengalaman</a></li>
+      <li><a href="#pendidikan">Pendidikan</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="badge">General Affair · Admin · Operator</span>
+    <h1>Halo, saya <span>Dimas Dwi Almufashshal</span></h1>
+    <p>General Affair dan Messenger di perusahaan cloud yang dipercaya menangani invoice, surat kontrak, dan dokumen tender. Sambil bekerja, saya kuliah Teknik Informatika di akhir pekan untuk melangkah ke dunia IT.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://wa.me/6287886128534" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
+      <a class="btn" href="mailto:dimassdwi008@gmail.com">Kirim Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/dimas-dwi-almufashshal-2364302b2/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3+ tahun</b><small>Pengalaman Admin &amp; Operator</small></div>
+      <div class="stat"><b>100+</b><small>Dokumen ditangani per bulan</small></div>
+      <div class="stat"><b>S1 TI</b><small>Sedang kuliah akhir pekan</small></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="tentang" class="about">
+    <div class="wrap">
+      <h2>Tentang Saya</h2>
+      <p>Saya memulai karier di dunia F&amp;B sebagai Cook Helper dan Barista, tempat saya belajar disiplin, bekerja cepat, dan melayani pelanggan.</p>
+      <p>Dari sana saya beralih ke administrasi di PT Multi Bangun Abadi, menyusun laporan kinerja dan pengadaan untuk tim. Kini sebagai General Affair dan Messenger di perusahaan cloud, saya dipercaya menangani dokumen legal dan kontrak, sambil kuliah Teknik Informatika untuk melangkah ke bidang IT.</p>
+    </div>
+  </section>
+
+  <section id="pengalaman">
+    <div class="wrap">
+      <h2>Pengalaman Kerja</h2>
+      <div class="timeline">
+
+        <div class="job">
+          <h3>General Affair dan Messenger</h3>
+          <div class="co">PT Inovation Cloud Service (ICS Compute)</div>
+          <div class="meta">Feb 2024 – Sekarang · Mega Kuningan, Jakarta Selatan</div>
+          <ul>
+            <li>Perusahaan konsultasi dan integrasi sistem cloud serta solusi infrastruktur cloud computing di Indonesia.</li>
+            <li>Dipercaya menangani dokumen legal dan kontrak, serta mendukung operasional harian kantor sebagai General Affair.</li>
+            <li>Mengantar dan menerima dokumen, invoice, serta surat kontrak dan tender, lebih dari 100 dokumen per bulan.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Admin dan Operator</h3>
+          <div class="co">PT Multi Bangun Abadi</div>
+          <div class="meta">Nov 2020 – Jan 2024 · Tebet, Jakarta Selatan</div>
+          <ul>
+            <li>Perusahaan jasa konsultasi manajemen, distributor dan aggregator nasional pulsa dan PPOB, serta layanan packaging.</li>
+            <li>Menyusun laporan kinerja tim bulanan dan laporan harian, laporan pengadaan barang untuk kebutuhan tim, serta tugas administrasi umum.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Barista</h3>
+          <div class="co">Kopi Si Jampang</div>
+          <div class="meta">Jun 2020 – Nov 2020 · Kuningan, Jakarta Selatan</div>
+          <ul>
+            <li>Menyiapkan minuman di coffee shop yang berlokasi di kawasan Kejaksaan Tinggi DKI Jakarta.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Barista dan Kitchen</h3>
+          <div class="co">Jag's Kitchen</div>
+          <div class="meta">Jan 2019 – Mar 2020 · Jagakarsa, Jakarta Selatan</div>
+          <ul>
+            <li>Menyiapkan minuman kopi dan non-kopi serta membantu dapur di restoran premium (steak, pasta, pizza).</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Cook Helper</h3>
+          <div class="co">Kedai RB.CO</div>
+          <div class="meta">Mei 2018 – Okt 2018 · Warung Buncit, Jakarta Selatan</div>
+          <ul>
+            <li>Membantu produksi makanan dan minuman Indonesia di dapur restoran.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan">
+    <div class="wrap">
+      <h2>Pendidikan</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Teknik Informatika</h3>
+          <p>Universitas Indraprasta PGRI, Jakarta<br>Kuliah akhir pekan · Sep 2024 – Sekarang</p>
+        </div>
+        <div class="card">
+          <h3>Akuntansi</h3>
+          <p>SMK Purnama 2 Jakarta<br>Jul 2015 – Mei 2018</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="keahlian">
+    <div class="wrap">
+      <h2>Keahlian</h2>
+      <div class="skills">
+        <h3>Administrasi &amp; Layanan</h3>
+        <span>Administrasi perkantoran</span>
+        <span>Pencatatan data</span>
+        <span>Dasar akuntansi</span>
+        <span>Pelayanan pelanggan</span>
+        <span>Kerja sama tim</span>
+        <span>Barista (kopi &amp; non-kopi)</span>
+
+        <h3>Aplikasi</h3>
+        <span>Microsoft Excel</span>
+        <span>Microsoft Word</span>
+        <span>Google Spreadsheet</span>
+        <span>Google Docs</span>
+        <span>Google Forms</span>
+        <span>Google Drive</span>
+        <span>Gmail &amp; Calendar</span>
+
+        <h3>Sedang Didalami (Kuliah)</h3>
+        <span>Java</span>
+        <span>NetBeans</span>
+        <span>VS Code</span>
+        <span>PHP &amp; phpMyAdmin</span>
+        <span>XAMPP</span>
+        <span>Jaringan (Cisco)</span>
+
+        <h3>Bahasa</h3>
+        <span>Indonesia (mahir)</span>
+        <span>Inggris (menengah)</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Mari Terhubung</h2>
+        <p>Jakarta Selatan · 0878 8612 8534 · dimassdwi008@gmail.com</p>
+        <div class="cta" style="justify-content:center;margin-top:0">
+          <a class="btn primary" href="https://wa.me/6287886128534" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="mailto:dimassdwi008@gmail.com">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/dimas-dwi-almufashshal-2364302b2/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Dimas Dwi Almufashshal</div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
